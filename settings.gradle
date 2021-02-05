@@ -1,0 +1,3 @@
+include ':techain'
+include ':app'
+rootProject.name = "BaiduCloudPushTest"

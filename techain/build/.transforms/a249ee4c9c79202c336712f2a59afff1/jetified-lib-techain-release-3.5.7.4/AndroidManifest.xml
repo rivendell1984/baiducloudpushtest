@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.baidu.techain"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="26" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <permission
+        android:name="${applicationId}.permission.techain.RECEIVE"
+        android:protectionLevel="signatureOrSystem" />
+
+    <uses-permission android:name="${applicationId}.permission.techain.RECEIVE" />
+
+    <application>
+        <activity
+            android:name="com.baidu.techain.TechainActivity"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="standard"
+            android:theme="@style/BD_TranslucentTheme"
+            tools:replace="android:theme,android:exported" >
+            <meta-data
+                android:name="acsr"
+                android:value="t" />
+
+            <intent-filter>
+                <action android:name="com.baidu.action.Techain.VIEW" />
+
+                <category android:name="com.baidu.category.techain" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.baidu.techain.RichWebActivity"
+            android:exported="true" >
+        </activity>
+
+        <receiver
+            android:name="com.baidu.techain.THReceiver"
+            android:exported="true" />
+
+        <service
+            android:name="com.baidu.techain.THService"
+            android:exported="true" />
+
+        <provider
+            android:name="com.baidu.techain.THProvider"
+            android:authorities="${applicationId}.techain.th.provider"
+            android:exported="true" />
+
+        <service
+            android:name="com.baidu.techain.TechainService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.baidu.action.Techain.VIEW" />
+
+                <category android:name="com.baidu.category.techain" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="com.baidu.techain.TechainProvider"
+            android:authorities="${applicationId}.techain.ac.provider"
+            android:exported="false" />
+
+        <meta-data
+            android:name="installed_inactive_support"
+            android:value="true" />
+        <meta-data
+            android:name="seckey_avscan"
+            android:value="660346260f8a841a04ec2a56815b421b" />
+        <meta-data
+            android:name="appkey_avscan"
+            android:value="100034" />
+    </application>
+
+</manifest>

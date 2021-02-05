@@ -1,0 +1,21 @@
+-keepattributes *JavascriptInterface*
+-ignorewarnings
+
+-keep class com.baidu.techain.ac.** {*;}
+-keepclasseswithmembers class com.baidu.techain.jni.Asc {
+    native <methods>;
+}
+-keepclasseswithmembers class com.baidu.techain.ac.F {*;}
+-keep public class com.baidu.techain.active.Active {*;}
+-keep public class com.baidu.techain.mutiprocess.Sp {*;}
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep class com.baidu.techain.core.ApkInfo {*;}
+-keep class com.baidu.techain.rp.Report {
+    <methods>;
+}
+
+-keep class * implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator *;
+}

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">BaiduCloudPushTest</string>
+    <string name="load">init</string>
+    <string name="getid">get PushId</string>
+    <string name="check">check connection</string>
+    <string name="clean">clean</string>
+    <string name="device_code">device code: </string>
+    <string name="fail">device code: fail</string>
+    <string name="device_code_defult">device code: getting</string>
+    <string name="copy">copy</string>
+    <string name="retry">retry</string>
+</resources>
